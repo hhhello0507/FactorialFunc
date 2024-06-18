@@ -5,16 +5,16 @@ import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "FactorialInit",
+    name: "FactorialFunc",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         .library(
-            name: "FactorialInit",
-            targets: ["FactorialInit"]
+            name: "FactorialFunc",
+            targets: ["FactorialFunc"]
         ),
         .executable(
-            name: "FactorialInitClient",
-            targets: ["FactorialInitClient"]
+            name: "FactorialFuncClient",
+            targets: ["FactorialFuncClient"]
         ),
     ],
     dependencies: [
@@ -22,18 +22,18 @@ let package = Package(
     ],
     targets: [
         .macro(
-            name: "FactorialInitMacros",
+            name: "FactorialFuncMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
             ]
         ),
-        .target(name: "FactorialInit", dependencies: ["FactorialInitMacros"]),
-        .executableTarget(name: "FactorialInitClient", dependencies: ["FactorialInit"]),
+        .target(name: "FactorialFunc", dependencies: ["FactorialFuncMacros"]),
+        .executableTarget(name: "FactorialFuncClient", dependencies: ["FactorialFunc"]),
         .testTarget(
-            name: "FactorialInitTests",
+            name: "FactorialFuncTests",
             dependencies: [
-                "FactorialInitMacros",
+                "FactorialFuncMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),

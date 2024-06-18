@@ -1,18 +1,18 @@
 //import SwiftSyntaxMacros
-//import FactorialInitMacros
+//import FactorialFuncMacros
 //import SwiftSyntaxMacrosTestSupport
 //import XCTest
-//import FactorialInit
+//import FactorialFunc
 //
 //let testMacros: [String: Macro.Type] = [
-//    "FactorialInit": FactorialInitMacro.self,
+//    "FactorialFunc": FactorialFuncMacro.self,
 //]
 //
-//final class FactorialInitTests: XCTestCase {
+//final class FactorialFuncTests: XCTestCase {
 //    func testMacro() throws {
 //        assertMacroExpansion(
 //            """
-//            @FactorialInit
+//            @FactorialFunc
 //            func a(_ name: Int, @ViewBuilder age: () -> Void, f: [Int], action: @escaping () async -> Void) {
 //                
 //            }

@@ -7,7 +7,7 @@ public enum Error: Swift.Error {
     case notInit
 }
 
-public struct FactorialInitMacro: PeerMacro {
+public struct FactorialFuncMacro: PeerMacro {
     public static func expansion(
         of node: AttributeSyntax,
         providingPeersOf declaration: some DeclSyntaxProtocol,
@@ -99,9 +99,9 @@ public struct FactorialInitMacro: PeerMacro {
 }
 
 @main
-struct FactorialInitPlugin: CompilerPlugin {
+struct FactorialFuncPlugin: CompilerPlugin {
     let providingMacros: [Macro.Type] = [
-        FactorialInitMacro.self
+        FactorialFuncMacro.self
     ]
 }
 
