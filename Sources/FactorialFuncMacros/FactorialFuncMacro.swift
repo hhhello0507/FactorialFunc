@@ -54,7 +54,7 @@ public struct FactorialFuncMacro: PeerMacro {
                 generateFunctionParamClause(originParamClause: originParams, idxArr: idxArr)
             }
             .map { param in
-                try? FunctionDeclSyntax("func \(function.name)\(param)") {
+                try? FunctionDeclSyntax("\(raw: function.modifiers)func \(function.name)\(param)") {
                     let str = generateFunctionCall(originParamClause: originParams)
                     return "\(function.name)(\(raw: str))"
                 }
